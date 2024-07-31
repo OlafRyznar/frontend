@@ -75,7 +75,7 @@ function App() {
               className="p-2 rounded-l-md border border-gray-300"
             />
             <button
-              className="p-2 bg-blue-600 text-white rounded-r-md flex items-center"
+              className="p-2 bg-blue-600 text-white rounded-r-md flex items-center h-full"
               onClick={handleButtonClick}
             >
               <FaArrowRight />
@@ -86,26 +86,23 @@ function App() {
 
       {ipData && (
         <div
-          className="absolute inset-x-24 top-[20%] bg-white shadow-2xl rounded-2xl z-20 p-4 flex justify-between items-center"
-          style={{ height: '20vh' }}
+          className="absolute inset-x-12 sm:inset-x-24 top-[20%] sm:top-[25%] bg-white shadow-2xl rounded-2xl z-20 p-4 flex flex-col sm:flex-row items-center justify-around sm:justify-between overflow-hidden"
         >
-          <div className="flex flex-row w-full justify-between">
-            <div className="flex-1 flex flex-col justify-center items-center border-r border-gray-300 pr-4">
-              <span className="font-semibold">IP Address:</span>
-              <span className="text-gray-700">{ipData.ip}</span>
-            </div>
-            <div className="flex-1 flex flex-col justify-center items-center border-r border-gray-300 px-4">
-              <span className="font-semibold">Location:</span>
-              <span className="text-gray-700">{`${ipData.location.city}, ${ipData.location.region}, ${ipData.location.country}`}</span>
-            </div>
-            <div className="flex-1 flex flex-col justify-center items-center border-r border-gray-300 px-4">
-              <span className="font-semibold">Timezone:</span>
-              <span className="text-gray-700">UTC {ipData.location.timezone}</span>
-            </div>
-            <div className="flex-1 flex flex-col justify-center items-center pl-4">
-              <span className="font-semibold">ISP:</span>
-              <span className="text-gray-700">{ipData.isp}</span>
-            </div>
+          <div className="flex-1 flex flex-col justify-center items-center border-b sm:border-b-0 sm:border-r border-gray-300 pb-2 sm:pb-0 sm:pr-2 text-center text-xs sm:text-sm">
+            <span className="font-semibold">IP Address:</span>
+            <span className="text-gray-700">{ipData.ip}</span>
+          </div>
+          <div className="flex-1 flex flex-col justify-center items-center border-b sm:border-b-0 sm:border-r border-gray-300 pb-2 sm:pb-0 sm:px-2 text-center text-xs sm:text-sm">
+            <span className="font-semibold">Location:</span>
+            <span className="text-gray-700">{`${ipData.location.city}, ${ipData.location.region}, ${ipData.location.country}`}</span>
+          </div>
+          <div className="flex-1 flex flex-col justify-center items-center border-b sm:border-b-0 sm:border-r border-gray-300 pb-2 sm:pb-0 sm:px-2 text-center text-xs sm:text-sm">
+            <span className="font-semibold">Timezone:</span>
+            <span className="text-gray-700">UTC {ipData.location.timezone}</span>
+          </div>
+          <div className="flex-1 flex flex-col justify-center items-center pt-2 sm:pt-0 sm:pl-2 text-center text-xs sm:text-sm">
+            <span className="font-semibold">ISP:</span>
+            <span className="text-gray-700">{ipData.isp}</span>
           </div>
         </div>
       )}
